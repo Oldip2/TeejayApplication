@@ -32,7 +32,7 @@ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs:
       nexusArtifactUploader(
       nexusVersion: 'nexus3',
       protocol: 'http',
-      nexusUrl: 'ec2-18-216-159-233.us-east-2.compute.amazonaws.com:8081',
+      nexusUrl: 'ec2-52-15-189-187.us-east-2.compute.amazonaws.com:8081',
       groupId: 'myGroupId',
       version: '1.0-SNAPSHOT',
       repository: 'maven-snapshots',
@@ -48,7 +48,7 @@ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs:
     stage ('DEV Deploy') {
       steps {
       echo "deploying to DEV Env "
-      deploy adapters: [tomcat9(credentialsId: '859f3efc-4ca1-4221-8def-c341f5946a3a', path: '', url: 'http://ec2-18-224-44-158.us-east-2.compute.amazonaws.com:8080')], contextPath: null, war: '**/*.war'
+      deploy adapters: [tomcat9(credentialsId: '859f3efc-4ca1-4221-8def-c341f5946a3a', path: '', url: 'http://ec2-18-116-21-172.us-east-2.compute.amazonaws.com:8080')], contextPath: null, war: '**/*.war'
       }
     }
     stage ('Slack Notification') {
@@ -68,7 +68,7 @@ checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs:
      stage ('QA Deploy') {
       steps {
         echo "deploying to QA Env "
-        deploy adapters: [tomcat9(credentialsId: '859f3efc-4ca1-4221-8def-c341f5946a3a', path: '', url: 'http://ec2-18-224-44-158.us-east-2.compute.amazonaws.com:8080')], contextPath: null, war: '**/*.war'
+        deploy adapters: [tomcat9(credentialsId: '859f3efc-4ca1-4221-8def-c341f5946a3a', path: '', url: 'http://ec2-18-116-21-172.us-east-2.compute.amazonaws.com:8080')], contextPath: null, war: '**/*.war'
         }
     }
     stage ('QA Approve') {
