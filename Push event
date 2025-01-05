@@ -1,0 +1,19 @@
+{
+  "ref": "refs/heads/main",
+  "before": "abcdef1234567890",
+  "after": "123456abcdef7890",
+  "repository": {
+    "id": 123456789,
+    "name": "your-repo-name",
+    "full_name": "your-username/your-repo-name"
+  },
+  "pusher": {
+    "name": "your-username",
+    "email": "your-email@example.com"
+  },
+  "head_commit": {
+    "id": "123456abcdef7890",
+    "message": "Your commit message",
+    "timestamp": "2025-01-05T12:34:56+00:00"
+  }
+}
